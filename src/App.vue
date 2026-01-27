@@ -1,85 +1,62 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="container py-8 px-8">
+    <Button>Click me</Button>
+    <Button variant="destructive">Click me</Button>
+    <Button variant="outline">Click me</Button>
+    <Button variant="secondary">Click me</Button>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+    <section class="my-8">
+      <Accordion type="single" collapsible class="w-full" default-value="item-1">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Product Information</AccordionTrigger>
+          <AccordionContent>
+            <p>
+              Our flagship product combines cutting-edge technology with sleek design. Built with
+              premium materials, it offers unparalleled performance and reliability.
+            </p>
+            <p class="mt-2">
+              Key features include advanced processing capabilities, and an intuitive user interface
+              designed for both beginners and experts.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Shipping Details</AccordionTrigger>
+          <AccordionContent>
+            <p>
+              We offer worldwide shipping through trusted courier partners. Standard delivery takes
+              3-5 business days, while express shipping ensures delivery within 1-2 business days.
+            </p>
+            <p class="mt-2">
+              All orders are carefully packaged and fully insured. Track your shipment in real-time
+              through our dedicated tracking portal.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Return Policy</AccordionTrigger>
+          <AccordionContent>
+            <p>
+              We stand behind our products with a comprehensive 30-day return policy. If you're not
+              completely satisfied, simply return the item in its original condition.
+            </p>
+            <p class="mt-2">
+              Our hassle-free return process includes free return shipping and full refunds
+              processed within 48 hours of receiving the returned item.
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </section>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<script lang="ts" setup>
+import { Button } from '@/components/ui/button'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
+</script>
