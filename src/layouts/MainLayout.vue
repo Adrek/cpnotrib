@@ -1,8 +1,10 @@
 <template>
-  <div class="bg-red-500">
-    Hola, mensaje
-    <!-- Content Page -->
+  <SiteHeader />
+  <div class="h-full bg-blue-100">
     <slot />
-    <!-- Content Page -->
   </div>
 </template>
+
+<script lang="ts" setup>
+import SiteHeader from '@/components/SiteHeader.vue'
+</script>
