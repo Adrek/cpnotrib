@@ -1,7 +1,5 @@
 <template>
-  <MainLayout>cntenido</MainLayout>
+  <RouterView />
 </template>
 
-<script lang="ts" setup>
-import MainLayout from './layouts/MainLayout.vue'
-</script>
+<script lang="ts" setup></script>
