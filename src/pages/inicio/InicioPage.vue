@@ -2,15 +2,6 @@
 import { ref } from 'vue'
 /* UI */
 import Button from '@/components/ui/button/Button.vue'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog'
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
-import { TriangleAlert } from 'lucide-vue-next'
 /* Custom */
 import MainLayout from '@/layouts/MainLayout.vue'
 import RobotChat from '@/components/RobotChat.vue'
@@ -18,11 +9,12 @@ import RobotChat from '@/components/RobotChat.vue'
 import BigCardItem from '@/pages/inicio/widgets/BigCardItem.vue'
 import DocShieldCarIcon from '@/components/icons/DocShieldCarIcon.vue'
 import CarCheckIcon from '@/components/icons/CarCheckIcon.vue'
+import DialogRequisitos from './widgets/DialogRequisitos.vue'
 
-const open = ref(false)
+const openDialog = ref(false)
 
 function abrirDialogRequisitos() {
-  open.value = true
+  openDialog.value = true
 }
 </script>
 
@@ -32,7 +24,7 @@ function abrirDialogRequisitos() {
       <h1 class="text-2xl md:text-3xl font-bold text-primary">
         Compromiso de pago para deuda no tributaria - Tránsito
       </h1>
-      <p class="text-sm md:text-base text-muted-foreground">
+      <p class="text-sm md:text-base text-muted-foreground mt-2">
         Selecciona sobre qué opción deseas generar tu compromiso de pago.
       </p>
 
@@ -60,31 +52,7 @@ function abrirDialogRequisitos() {
     <!-- End::RobotChat -->
 
     <!-- Modal Requisitos -->
-    <Dialog v-model:open="open">
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>
-            <h1 class="text-xl md:text-2xl font-bold text-primary">
-              Compromiso de pago para deuda no tributaria - Tránsito
-            </h1>
-          </DialogTitle>
-          <DialogDescription>
-            <Alert class="bg-sky-50 border-sky-100">
-              <TriangleAlert />
-              <AlertTitle class="text-sky-800 line-clamp-none"
-                >Recuerda que el resultado de la atención de tu solicitud será remitida a tu casilla
-                electrónica del MTC.
-              </AlertTitle>
-              <AlertDescription>
-                Ver video paso a paso para crear su casilla del MTC
-              </AlertDescription>
-            </Alert>
-          </DialogDescription>
-        </DialogHeader>
-
-        <Button @click="open = false" size="spacing">Aceptar</Button>
-      </DialogContent>
-    </Dialog>
+    <DialogRequisitos v-model="openDialog" />
     <!-- End::Modal Requisitos -->
   </MainLayout>
 </template>
