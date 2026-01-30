@@ -19,7 +19,7 @@ import SATIcon from './icons/SATIcon.vue'
             target="_blank"
             class="dark:text-foreground"
           >
-            GitHub
+            Alertas y notificaciones
           </a>
         </Button>
       </div>

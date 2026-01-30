@@ -220,7 +220,7 @@ const table = useVueTable({
 <template>
   <div class="overflow-hidden rounded-lg border">
     <Table>
-      <TableHeader class="bg-accent sticky top-0 z-10">
+      <TableHeader class="bg-accent top-0 z-10">
         <TableRow v-for="headerGroup in table.getHeaderGroups()" :key="headerGroup.id">
           <TableHead
             v-for="header in headerGroup.headers"
